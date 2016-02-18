@@ -12,9 +12,9 @@ public class KisoKadai3 {
 
 	public static void main(String args[]) throws IOException{
 
-
+		    System.out.println("C:/Users/internous/git/201602-yuki.konで作成します");
 			System.out.println("フォルダ名を入力してください");
-			System.out.println("[例] C:\\test\\test.txt");
+			System.out.println("[例] test");
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -35,7 +35,7 @@ public class KisoKadai3 {
 
 
 
-		System.out.println("ファイル名をキーボードで入力し、指定してください\n[例] C:\\test\\test.txt\n入力が終わりましたらEnterキーを押して下さい。");
+		System.out.println("ファイル名をキーボードで入力し、指定してください\n[例] test.txt \n入力が終わりましたらEnterキーを押して下さい。");
 
 
 		BufferedReader br5 = new BufferedReader(new InputStreamReader(System.in));
@@ -103,11 +103,11 @@ public class KisoKadai3 {
 					switch (str2) {
 					case "1":
 						mode = true;
-						System.out.println("追記する内容を入力して下さい。");
+						System.out.println("追記する内容を入力して下さい。\n入力が終わりましたらEnterキーを押して下さい。");
 						break;
 					case "2":
 						mode = false;
-						System.out.println("");
+						System.out.println("上書きします。Enterキーを押して下さい。");
 					default:
 						break;
 					}
