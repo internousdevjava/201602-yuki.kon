@@ -35,13 +35,10 @@ public class KisoKadai3 {
 				System.out.println(e);
 			}
 		}
-
-
-
 		int end = 0;
 		while(end==0){
 
-			System.out.println("\n\n--メニュー--\n\n 1:ファイルを読み込みます\n 2:ファイルに書き込みします\n99:終了します\nを入力してください");
+			System.out.println("\n--メニュー--\n 1:ファイルを読み込みます\n 2:ファイルに書き込みします\n99:終了します\nを入力してください");
 			BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));
 			String str = br4.readLine();
 			int nu = 0;
@@ -57,7 +54,7 @@ public class KisoKadai3 {
 				break;
 			}
 			if(nu==1){
-				System.out.println("ファイルを読む");
+				System.out.println("ファイルを読み込みました。");
 				try{
 					FileReader filereader = new FileReader(file.getAbsolutePath());
 
@@ -68,25 +65,27 @@ public class KisoKadai3 {
 
 					filereader.close();
 				}catch(FileNotFoundException e){
-					System.out.println(e);
+					System.out.println(e+"読み込めるファイルがありません。");
 				}catch(IOException e){
-					System.out.println(e);
+					System.out.println(e+"読み込めるファイルがありません。");
 				}
 			}
 			if(nu==2){
-				System.out.println("ファイルを書く");
+				System.out.println("ファイルに書き込みます");
 				try {
 					boolean mode = false;
-					System.out.println("モードの設定。1:追記、2:上書き");
+					System.out.println("モードの設定を選択して下さい。\n1:追記、\n2:上書き");
 					BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
 					String str2 = br2.readLine();
 
 					switch (str2) {
 					case "1":
 						mode = true;
+						System.out.println("追記する内容を入力して下さい。");
 						break;
 					case "2":
 						mode = false;
+						System.out.println("");
 					default:
 						break;
 					}
