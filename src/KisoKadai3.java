@@ -13,12 +13,34 @@ public class KisoKadai3 {
 	public static void main(String args[]) throws IOException{
 
 
-		System.out.println("ファイル名をキーボードで入力し、指定してください\n入力が終わりましたらEnterキーを押して下さい。");
+			System.out.println("フォルダ名を入力してください");
+			System.out.println("[例] C:\\test\\test.txt");
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			String str = br.readLine();
+			File dir = new File(str);
 
-		String y =br.readLine();
+
+			if(!dir.exists()){
+				System.out.println("フォルダがありません。:"+dir.getAbsolutePath());
+				dir.mkdirs();
+				System.out.println("作成成功");
+			} else {
+				System.out.println("フォルダは既に存在します。");
+			}
+
+			System.out.println("ファイル名を入力してください");
+
+
+
+		System.out.println("ファイル名をキーボードで入力し、指定してください\n[例] C:\\test\\test.txt\n入力が終わりましたらEnterキーを押して下さい。");
+
+
+		BufferedReader br5 = new BufferedReader(new InputStreamReader(System.in));
+
+		String y =br5.readLine();
 		File file = new File(y);
 
 		if(file.exists()){
@@ -40,11 +62,11 @@ public class KisoKadai3 {
 
 			System.out.println("\n--メニュー--\n 1:ファイルを読み込みます\n 2:ファイルに書き込みします\n99:終了します\nを入力してください");
 			BufferedReader br4 = new BufferedReader(new InputStreamReader(System.in));
-			String str = br4.readLine();
+			String str5 = br4.readLine();
 			int nu = 0;
 
-			if(str.matches("^[0-9]+$")){
-				nu=Integer.parseInt(str);
+			if(str5.matches("^[0-9]+$")){
+				nu=Integer.parseInt(str5);
 			}else{
 				System.out.println("\n----------\n半角数値でメニューを選択してください。\n----------\n");
 			}
